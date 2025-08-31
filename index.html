@@ -25,16 +25,17 @@
         </div>
         
         <div class="day-navigation">
-            <button class="day-btn active" data-day="1">Day 1: Chest + Cardio</button>
-            <button class="day-btn" data-day="2">Day 2: Back + Cardio</button>
-            <button class="day-btn" data-day="3">Day 3: Arms + Core</button>
-            <button class="day-btn" data-day="4">Day 4: Shoulders</button>
-            <button class="day-btn" data-day="5">Day 5: Legs</button>
-            <button class="day-btn" data-day="6">Day 6: Cardio</button>
+            <button class="day-btn active" data-day="1">Day 1: Chest & Back</button>
+            <button class="day-btn" data-day="2">Day 2: Legs & Shoulders</button>
+            <button class="day-btn" data-day="3">Day 3: Arms</button>
+            <button class="day-btn" data-day="4">Day 4: Chest & Triceps</button>
+            <button class="day-btn" data-day="5">Day 5: Back & Biceps</button>
+            <button class="day-btn" data-day="6">Day 6: Legs & Shoulders</button>
             <button class="day-btn" data-day="7">Day 7: Rest</button>
         </div>
         
         <div class="edit-controls">
+            <button class="btn btn-danger" onclick="clearWorkoutData()">Clear All Data</button>
             <button class="btn btn-primary" id="toggle-edit">Edit Mode</button>
             <button class="btn btn-success" id="save-changes" style="display:none;">Save Changes</button>
         </div>
@@ -42,18 +43,17 @@
         <div id="workout-plan">
             <!-- Day 1 -->
             <div class="card day-content" data-day="1">
-                <h2>Day 1: Chest + Cardio</h2>
+                <h2>Day 1: Chest & Back</h2>
                 
                 <div class="exercise-counter">
-                    <span>Exercises: <span id="exercise-count-1">5</span></span>
+                    <span>Exercises: <span id="exercise-count-1">6</span></span>
                     <span style="font-weight: 900;">ॐ</span>
-                    <span>Sets: <span id="set-count-1">13</span></span>
-                    
+                    <span>Sets: <span id="set-count-1">22</span></span>
                 </div>
                 
                 <div class="workout-item">
                     <button class="delete-exercise" style="display:none;">×</button>
-                    <div class="exercise-title">Bench Press 4×10</div>
+                    <div class="exercise-title">Flat Barbell Bench Press</div>
                     <div class="exercise-content">
                         <div class="sets-container">
                             <div class="set">
@@ -79,18 +79,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="break-timer">
-                    <h4>Extended Break Timer (After 3 Sets)</h4>
-                    <div class="timer-display" id="break-timer-1">05:00</div>
-                    <div class="timer-controls">
-                        <button class="btn btn-warning start-break" data-duration="300" data-day="1">Start 5-min Break</button>
-                        <button class="btn btn-danger" onclick="resetBreakTimer(1)">Reset Break</button>
-                    </div>
-                </div>
                 
                 <div class="workout-item">
                     <button class="delete-exercise" style="display:none;">×</button>
-                    <div class="exercise-title">Incline Dumbbell Press 4×10</div>
+                    <div class="exercise-title">Incline Dumbbell Press</div>
                     <div class="exercise-content">
                         <div class="sets-container">
                             <div class="set">
@@ -117,18 +109,9 @@
                     </div>
                 </div>
                 
-                <div class="break-timer">
-                    <h4>Extended Break Timer (After 3 Sets)</h4>
-                    <div class="timer-display" id="break-timer-1">05:00</div>
-                    <div class="timer-controls">
-                        <button class="btn btn-warning start-break" data-duration="300" data-day="1">Start 5-min Break</button>
-                        <button class="btn btn-danger" onclick="resetBreakTimer(1)">Reset Break</button>
-                    </div>
-                </div>
-                
                 <div class="workout-item">
                     <button class="delete-exercise" style="display:none;">×</button>
-                    <div class="exercise-title">Chest Fly 3×12</div>
+                    <div class="exercise-title">Weighted Pull-Ups</div>
                     <div class="exercise-content">
                         <div class="sets-container">
                             <div class="set">
@@ -154,27 +137,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="break-timer">
-                    <h4>Extended Break Timer (After 3 Sets)</h4>
-                    <div class="timer-display" id="break-timer-1">05:00</div>
-                    <div class="timer-controls">
-                        <button class="btn btn-warning start-break" data-duration="300" data-day="1">Start 5-min Break</button>
-                        <button class="btn btn-danger" onclick="resetBreakTimer(1)">Reset Break</button>
-                    </div>
-                </div>
                 
                 <div class="workout-item">
                     <button class="delete-exercise" style="display:none;">×</button>
-                    <div class="exercise-title">Push-ups 2×failure</div>
+                    <div class="exercise-title">Barbell Rows</div>
                     <div class="exercise-content">
                         <div class="sets-container">
                             <div class="set">
                                 <div class="set-number">Set 1</div>
-                                <input type="number" class="weight-input" placeholder="Reps" min="0">
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
                             </div>
                             <div class="set">
                                 <div class="set-number">Set 2</div>
-                                <input type="number" class="weight-input" placeholder="Reps" min="0">
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
                             </div>
                             <div class="set">
                                 <div class="set-number">Set 3</div>
@@ -191,31 +166,60 @@
                         </div>
                     </div>
                 </div>
-                <div class="break-timer">
-                    <h4>Extended Break Timer (After 3 Sets)</h4>
-                    <div class="timer-display" id="break-timer-1">05:00</div>
-                    <div class="timer-controls">
-                        <button class="btn btn-warning start-break" data-duration="300" data-day="1">Start 5-min Break</button>
-                        <button class="btn btn-danger" onclick="resetBreakTimer(1)">Reset Break</button>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Dumbbell Pullovers</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-1-5">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="1-5">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('1-5')">Reset</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="workout-item">
                     <button class="delete-exercise" style="display:none;">×</button>
-                    <div class="exercise-title">Plank</div>
+                    <div class="exercise-title">Chest-Supported Rows</div>
                     <div class="exercise-content">
                         <div class="sets-container">
                             <div class="set">
-                                <div class="set-number">Time</div>
-                                <input type="number" class="weight-input" value="1" min="0">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
                             </div>
                         </div>
                         <div class="exercise-timer">
                             <h4>Exercise Break Timer</h4>
-                            <div class="timer-display" id="exercise-timer-1-4">02:00</div>
+                            <div class="timer-display" id="exercise-timer-1-6">02:00</div>
                             <div class="timer-controls">
-                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="1-4">Start Break</button>
-                                <button class="btn btn-danger" onclick="resetExerciseTimer('1-4')">Reset</button>
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="1-6">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('1-6')">Reset</button>
                             </div>
                         </div>
                     </div>
@@ -226,71 +230,1044 @@
             
             <!-- Day 2 -->
             <div class="card day-content" data-day="2" style="display:none;">
-                <h2>Day 2: Back + Cardio</h2>
+                <h2>Day 2: Legs & Shoulders</h2>
                 
                 <div class="exercise-counter">
-                    <span>Exercises: <span id="exercise-count-2">0</span></span>
-                    <span>Sets: <span id="set-count-2">0</span></span>
-                    <span>Estimated Time: 0 min</span>
+                    <span>Exercises: <span id="exercise-count-2">7</span></span>
+                    <span style="font-weight: 900;">ॐ</span>
+                    <span>Sets: <span id="set-count-2">24</span></span>
                 </div>
                 
-                <p>No exercises added yet. Click the button below to add exercises.</p>
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Barbell Squats</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-2-1">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="2-1">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('2-1')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Bulgarian Split Squats</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Left Leg</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Right Leg</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-2-2">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="2-2">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('2-2')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Walking Lunges</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-2-3">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="2-3">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('2-3')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Leg Extensions</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-2-4">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="2-4">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('2-4')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Standing Military Press</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-2-5">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="2-5">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('2-5')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Dumbbell Lateral Raises</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-2-6">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="2-6">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('2-6')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Upright Rows</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-2-7">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="2-7">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('2-7')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
                 <button class="add-exercise-btn" data-day="2">+ Add Exercise to Day 2</button>
             </div>
             
+            <!-- Day 3 -->
             <div class="card day-content" data-day="3" style="display:none;">
-                <h2>Day 3: Arms + Core</h2>
+                <h2>Day 3: Arms (Biceps & Triceps)</h2>
+                
                 <div class="exercise-counter">
-                    <span>Exercises: <span id="exercise-count-3">0</span></span>
-                    <span>Sets: <span id="set-count-3">0</span></span>
-                    <span>Estimated Time: 0 min</span>
+                    <span>Exercises: <span id="exercise-count-3">6</span></span>
+                    <span style="font-weight: 900;">ॐ</span>
+                    <span>Sets: <span id="set-count-3">20</span></span>
                 </div>
-                <p>No exercises added yet. Click the button below to add exercises.</p>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Barbell Curls</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-3-1">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="3-1">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('3-1')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Incline Dumbbell Curls</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-3-2">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="3-2">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('3-2')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Concentration Curls</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-3-3">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="3-3">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('3-3')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Close-Grip Bench Press</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-3-4">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="3-4">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('3-4')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Weighted Dips</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-3-5">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="3-5">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('3-5')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Overhead Dumbbell Extension</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-3-6">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="3-6">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('3-6')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <button class="add-exercise-btn" data-day="3">+ Add Exercise to Day 3</button>
             </div>
             
+            <!-- Day 4 -->
             <div class="card day-content" data-day="4" style="display:none;">
-                <h2>Day 4: Shoulders + Cardio</h2>
+                <h2>Day 4: Chest & Triceps</h2>
+                
                 <div class="exercise-counter">
-                    <span>Exercises: <span id="exercise-count-4">0</span></span>
-                    <span>Sets: <span id="set-count-4">0</span></span>
-                    <span>Estimated Time: 0 min</span>
+                    <span>Exercises: <span id="exercise-count-4">7</span></span>
+                    <span style="font-weight: 900;">ॐ</span>
+                    <span>Sets: <span id="set-count-4">21</span></span>
                 </div>
-                <p>No exercises added yet. Click the button below to add exercises.</p>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Incline Machine Press</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-4-1">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="4-1">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('4-1')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Pec Deck Fly</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-4-2">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="4-2">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('4-2')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Push-Ups</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Reps" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Reps" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Reps" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-4-3">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="4-3">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('4-3')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Standing Cable Chest Press</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-4-4">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="4-4">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('4-4')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">EZ Bar Skull Crushers</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-4-5">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="4-5">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('4-5')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Single-Arm Cable Pushdowns</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Left Arm</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Right Arm</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-4-6">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="4-6">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('4-6')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Dumbbell Kickbacks</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Left Arm</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Right Arm</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-4-7">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="4-7">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('4-7')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <button class="add-exercise-btn" data-day="4">+ Add Exercise to Day 4</button>
             </div>
             
+            <!-- Day 5 -->
             <div class="card day-content" data-day="5" style="display:none;">
-                <h2>Day 5: Legs + Core</h2>
+                <h2>Day 5: Back & Biceps</h2>
+                
                 <div class="exercise-counter">
-                    <span>Exercises: <span id="exercise-count-5">0</span></span>
-                    <span>Sets: <span id="set-count-5">0</span></span>
-                    <span>Estimated Time: 0 min</span>
+                    <span>Exercises: <span id="exercise-count-5">7</span></span>
+                    <span style="font-weight: 900;">ॐ</span>
+                    <span>Sets: <span id="set-count-5">23</span></span>
                 </div>
-                <p>No exercises added yet. Click the button below to add exercises.</p>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Neutral-Grip Pull-Ups</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Reps" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Reps" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Reps" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-5-1">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="5-1">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('5-1')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Cable Seated Rows</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-5-2">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="5-2">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('5-2')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Chest-Supported T-Bar Rows</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-5-3">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="5-3">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('5-3')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Behind-the-Back Cable Row</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-5-4">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="5-4">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('5-4')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Incline Dumbbell Curls</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-5-5">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="5-5">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('5-5')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Barbell Curls</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-5-6">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="5-6">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('5-6')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Reverse EZ Bar Curls</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-5-7">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="5-7">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('5-7')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <button class="add-exercise-btn" data-day="5">+ Add Exercise to Day 5</button>
             </div>
             
+            <!-- Day 6 -->
             <div class="card day-content" data-day="6" style="display:none;">
-                <h2>Day 6: Full Body + Cardio</h2>
+                <h2>Day 6: Legs & Shoulders</h2>
+                
                 <div class="exercise-counter">
-                    <span>Exercises: <span id="exercise-count-6">0</span></span>
-                    <span>Sets: <span id="set-count-6">0</span></span>
-                    <span>Estimated Time: 0 min</span>
+                    <span>Exercises: <span id="exercise-count-6">7</span></span>
+                    <span style="font-weight: 900;">ॐ</span>
+                    <span>Sets: <span id="set-count-6">23</span></span>
                 </div>
-                <p>No exercises added yet. Click the button below to add exercises.</p>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Romanian Deadlifts</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-6-1">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="6-1">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('6-1')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Lying Leg Curls</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-6-2">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="6-2">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('6-2')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Dumbbell Step-Ups</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Left Leg</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Right Leg</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-6-3">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="6-3">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('6-3')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Cable Glute Kickbacks</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Left Leg</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Right Leg</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-6-4">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="6-4">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('6-4')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Standing Overhead Barbell Press</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-6-5">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="6-5">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('6-5')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Reverse Pec Deck / Rear Delt Machine</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Set 1</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 2</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Set 3</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-6-6">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="6-6">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('6-6')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-item">
+                    <button class="delete-exercise" style="display:none;">×</button>
+                    <div class="exercise-title">Dumbbell Lateral Raise Dropset — 3 drops</div>
+                    <div class="exercise-content">
+                        <div class="sets-container">
+                            <div class="set">
+                                <div class="set-number">Heavy Set</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Medium Set</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                            <div class="set">
+                                <div class="set-number">Light Set</div>
+                                <input type="number" class="weight-input" placeholder="Weight" min="0">
+                            </div>
+                        </div>
+                        <div class="exercise-timer">
+                            <h4>Exercise Break Timer</h4>
+                            <div class="timer-display" id="exercise-timer-6-7">02:00</div>
+                            <div class="timer-controls">
+                                <button class="btn btn-warning start-exercise-break" data-duration="120" data-exercise="6-7">Start Break</button>
+                                <button class="btn btn-danger" onclick="resetExerciseTimer('6-7')">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <button class="add-exercise-btn" data-day="6">+ Add Exercise to Day 6</button>
             </div>
             
+            <!-- Day 7 -->
             <div class="card day-content" data-day="7" style="display:none;">
                 <h2>Day 7: Rest Day</h2>
                 <div class="exercise-counter">
                     <span>Exercises: <span id="exercise-count-7">0</span></span>
+                    <span style="font-weight: 900;">ॐ</span>
                     <span>Sets: <span id="set-count-7">0</span></span>
-                    <span>Estimated Time: 0 min</span>
                 </div>
-                <p>No exercises added yet. Click the button below to add activities.</p>
+                <p>Complete rest. Focus on recovery, mobility, stretching, and nutrition.</p>
                 <button class="add-exercise-btn" data-day="7">+ Add Activity to Day 7</button>
             </div>
         </div>
